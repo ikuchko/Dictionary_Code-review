@@ -1,5 +1,8 @@
 <h3>Definition:</h1>
 
+#if ($word.getDefinition().size() == 0)
+  <p class="bg-danger">No one difinidition of word: $word.getWord() </p>
+#end
 
 <ol>
   #foreach ($definition in $word.getDefinition())
