@@ -26,4 +26,13 @@ public class IntegrationTest extends FluentTest {
     goTo("http://localhost:4567/");
     assertThat(pageSource()).contains("someWord");
   }
+
+  @Test
+  public void createsNewWord_Panda(){
+    goTo("http://localhost:4567/");
+    fill("#word").with("Panda");
+    submit(".btn");
+    goTo("http://localhost:4567/");
+    assertThat(pageSource()).contains("Panda");
+  }
 }

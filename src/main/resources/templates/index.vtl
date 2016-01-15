@@ -1,5 +1,10 @@
 <h1>Dictionary</h1>
-<p>Click on interested word in order to see a difinition.</p>
+<p>Click on interested word in order to see a difinition or create new word in your dictionary.</p>
+<form action="/newWord" method="post">
+  <label for="word">Enter new word</label>
+  <input type="text" name="word" id="word">
+  <button type="submit" class="btn btn-warning">Create</button>
+</form>
 
 <ul>
   #foreach($word in $wordList)

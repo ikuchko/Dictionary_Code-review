@@ -12,12 +12,25 @@ public class App {
       Map<String, Object> model = new HashMap<String, Object>();
       model.put("template", "templates/index.vtl");
 
-      Word newWord = new Word("someord");
+      Word newWord = new Word("someWord");
 
       model.put("wordList", Word.all());
 
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
+
+    post("/newWord", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      model.put("template", "templates/success.vtl");
+
+      Word newWord = new Word(request.queryParams("word"));
+
+      model.put("newWord", newWord);
+
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+
 
   }
 }
