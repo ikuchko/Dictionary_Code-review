@@ -21,18 +21,23 @@ public class IntegrationTest extends FluentTest {
     assertThat(pageSource()).contains("Dictionary");
   }
 
-  @Test
-  public void containsFistWordOnMainPage_someWord(){
-    goTo("http://localhost:4567/");
-    assertThat(pageSource()).contains("someWord");
-  }
+  // @Test
+  // public void createsNewWord_Panda(){
+  //   goTo("http://localhost:4567/");
+  //   fill("#word").with("Panda");
+  //   submit(".btn");
+  //   goTo("http://localhost:4567/");
+  //   //assertThat(pageSource()).contains(".btn btn-link");
+  //   assertThat(findFirst(".btn btn-link").getName().contains("Panda"));
+  // }
 
-  @Test
-  public void createsNewWord_Panda(){
-    goTo("http://localhost:4567/");
-    fill("#word").with("Panda");
-    submit(".btn");
-    goTo("http://localhost:4567/");
-    assertThat(pageSource()).contains("Panda");
+  // @Test
+  // public void containsDefinitionOfAChosenWord_TheMostSweetAnimal(){
+  //   goTo("http://localhost:4567/");
+  //   fill("#word").with("Panda");
+  //   submit(".btn");
+  //   goTo("http://localhost:4567/");
+  //   submit(".btn");
+    //assertThat(pageSource()).contains("ADefinition");
   }
 }

@@ -1,0 +1,22 @@
+<h3>Definition:</h1>
+
+
+<ol>
+  #foreach ($definition in $word.getDefinition())
+    <li>$definition.getDefinition()</li>
+  #end
+</ol>
+
+<br>
+<br>
+<br>
+<br>
+
+<form action="/newDefinition" method="post">
+  <h4>Have something to add?</h4>
+  <label for="newDefinition">Enter your definition</label>
+  <input type="text" name="newDefinition" id="newDefinition">
+  <button type="submit" class="btn btn-warning">Create</button>
+</form>
+
+<a href="/">Back to dictionary</a>

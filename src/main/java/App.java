@@ -12,8 +12,6 @@ public class App {
       Map<String, Object> model = new HashMap<String, Object>();
       model.put("template", "templates/index.vtl");
 
-      Word newWord = new Word("someWord");
-
       model.put("wordList", Word.all());
 
       return new ModelAndView(model, layout);
@@ -26,6 +24,17 @@ public class App {
       Word newWord = new Word(request.queryParams("word"));
 
       model.put("newWord", newWord);
+
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    get("/newDefinition", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      model.put("template", "templates/definition.vtl");
+
+      Word.find(Integer.parseInt(request.queryParams("word"))).addDefinition("The sweetest animal in the word!");
+
+      model.put("word", Word.find(Integer.parseInt(request.queryParams("word"))));
 
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
