@@ -51,7 +51,7 @@ public class WordTest {
   public void word_returnEmptyWordList_0(){
     Word newWord = new Word("word");
     Word.clear();
-    assertEquals(0, newWord.all().size());
+    assertEquals(0, Word.all().size());
   }
 
   @Test
