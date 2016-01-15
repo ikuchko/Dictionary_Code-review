@@ -5,7 +5,7 @@ import spark.template.velocity.VelocityTemplateEngine;
 import static spark.Spark.*;
 import java.util.Random;
 
-public class RPSGame {
+public class App {
   public static void main(String[] args) {
     String layout = "templates/layout.vtl";
 
@@ -16,4 +16,4 @@ public class RPSGame {
     // }, new VelocityTemplateEngine());
 
   }
-} 
+}
