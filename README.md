@@ -1,18 +1,20 @@
-# Scrabble Score Page
+# Dictionary
 
-##### Using java methods, our app adds your scrabble score. Original draft September 2015.
 
-#### By **Illia Kuchko** and **Nathan Romike**
+
+#### By **Illia Kuchko**
 
 ## Description
 
-Review our work and tell us what you think. Lets make **awesome** stuff together!
+##### Using java methods, application create definitions for words and allow you to review them.
+
 
 ## Setup
 
->[Visit our page](http://nathanromike.github.io/ScrabbleScore/)
-
-_User's choice of browser, but our favorite is [Chrome](www.google.com/chrome/)._
+* Clone this repository.
+* Install Gradle and Java
+* Run: gradle run in program directory.
+* Open localhost:4567 in web browser.
 
 ## Technologies Used
 
