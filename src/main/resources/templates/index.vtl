@@ -6,7 +6,7 @@
   <button type="submit" class="btn btn-warning">Create</button>
 </form>
 
-<form action="/newDefinition" method="get">
+<form action="/Definition" method="get">
   <ul>
     #foreach($word in $wordList)
       <li><button type="submit" class="btn btn-link" name="word" value="$word.getId()">$word.getWord()</button></li>

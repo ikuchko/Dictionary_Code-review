@@ -28,18 +28,27 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-    get("/newDefinition", (request, response) -> {
+    get("/Definition", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
       model.put("template", "templates/definition.vtl");
-
-      Word.find(Integer.parseInt(request.queryParams("word"))).addDefinition("The sweetest animal in the word!");
 
       model.put("word", Word.find(Integer.parseInt(request.queryParams("word"))));
 
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
+    post("/newDefinition", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      model.put("template", "templates/success.vtl");
 
+      Word word = Word.find(Integer.parseInt(request.queryParams("button")));
+      word.addDefinition(request.queryParams("newDefinition"));
+
+      model.put("newDefinition", word);
+
+
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
 
   }
 }

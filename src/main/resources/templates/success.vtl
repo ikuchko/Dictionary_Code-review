@@ -1,9 +1,10 @@
 #if ($newWord)
   <p>You successfuly create new word</p>
+  <a href="/">Back to main paige</a>
 #elseif ($newDefinition)
  <p>You successfuly create new definition</p>
+ <a href="/Definition?word=$newDefinition.getId()">Back</a>
 #else
   <p>Something gone wrong</p>
+  <a href="/">Back to main paige</a>
 #end
-
-<a href="/">Back to main paige</a>
